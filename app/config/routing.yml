@@ -1,8 +1,7 @@
 not_so_far_away_api:
-    resource: "@NotSoFarAwayApiBundle/Controller/"
+    resource: "@NotSoFarAwayApiBundle/Controller/DefaultController.php"
     type:     annotation
-    prefix:   /
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+articles:
+  type: rest
+  resource:  NotSoFarAway\ApiBundle\Controller\ArticleController
