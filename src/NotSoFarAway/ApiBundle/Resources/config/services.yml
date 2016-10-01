@@ -1,0 +1,4 @@
+services:
+#    not_so_far_away_api.example:
+#        class: NotSoFarAway\ApiBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

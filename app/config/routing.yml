@@ -1,3 +1,8 @@
+not_so_far_away_api:
+    resource: "@NotSoFarAwayApiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
