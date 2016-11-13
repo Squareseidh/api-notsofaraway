@@ -68,6 +68,13 @@ class Article
      */
     private $imageSrc;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="divergents", type="integer")
+     */
+    private $divergents;
+
 
     /**
      * Get id
@@ -245,5 +252,29 @@ class Article
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set divergents
+     *
+     * @param integer $divergents
+     *
+     * @return Article
+     */
+    public function setDivergents($divergents)
+    {
+        $this->divergents = $divergents;
+
+        return $this;
+    }
+
+    /**
+     * Get divergents
+     *
+     * @return integer
+     */
+    public function getDivergents()
+    {
+        return $this->divergents;
     }
 }

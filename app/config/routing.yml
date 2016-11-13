@@ -5,3 +5,11 @@ not_so_far_away_api:
 articles:
   type: rest
   resource:  NotSoFarAway\ApiBundle\Controller\ArticleController
+
+authors:
+  type: rest
+  resource:  NotSoFarAway\ApiBundle\Controller\AuthorController
+
+countries:
+  type: rest
+  resource:  NotSoFarAway\ApiBundle\Controller\CountryController

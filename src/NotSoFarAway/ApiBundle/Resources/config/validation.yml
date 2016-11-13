@@ -1,0 +1,5 @@
+ApiBundle\Entity\Article:
+    properties:
+        divergents:
+            - NotBlank: ~
+            - Type: integer
