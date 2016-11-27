@@ -1,4 +1,5 @@
 <?php
+
 namespace NotSoFarAway\ApiBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;

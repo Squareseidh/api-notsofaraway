@@ -13,7 +13,7 @@ use FOS\RestBundle\View\View;
 class AuthorController extends Controller
 {
     /**
-    * @Rest\View()
+    * @Rest\View(serializerGroups={"author"})
     * @Rest\Get("/authors")
     */
     public function getAuthorsAction(Request $request)
@@ -26,7 +26,7 @@ class AuthorController extends Controller
     }
 
     /**
-    * @Rest\View()
+    * @Rest\View(serializerGroups={"author"})
     * @Rest\Get("/authors/{id}")
     */
     public function getAuthorAction(Request $request)
@@ -36,7 +36,7 @@ class AuthorController extends Controller
                        ->find($request->get('id'));
 
         if (empty($author)) {
-            return new JsonResponse(['message' => 'Author not found'], Response::HTTP_NOT_FOUND);
+            return View::create(['message' => 'Author not found'], Response::HTTP_NOT_FOUND);
         }
 
         return $author;

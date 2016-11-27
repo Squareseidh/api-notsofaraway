@@ -13,7 +13,7 @@ use FOS\RestBundle\View\View;
 class CountryController extends Controller
 {
     /**
-    * @Rest\View()
+    * @Rest\View(serializerGroups={"country"})
     * @Rest\Get("/countries")
     */
     public function getCountriesAction(Request $request)
@@ -26,7 +26,7 @@ class CountryController extends Controller
     }
 
     /**
-    * @Rest\View()
+    * @Rest\View(serializerGroups={"country"})
     * @Rest\Get("/countries/{id}")
     */
     public function getCountryAction(Request $request)
@@ -36,7 +36,7 @@ class CountryController extends Controller
                         ->find($request->get('id'));
 
         if (empty($country)) {
-            return new JsonResponse(['message' => 'Country not found'], Response::HTTP_NOT_FOUND);
+            return View::create(['message' => 'Contry not found'], Response::HTTP_NOT_FOUND);
         }
 
         return $country;

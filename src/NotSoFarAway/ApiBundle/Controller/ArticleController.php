@@ -14,7 +14,7 @@ use NotSoFarAway\ApiBundle\Form\Type\ArticleType;
 class ArticleController extends Controller
 {
     /**
-    * @Rest\View()
+    * @Rest\View(serializerGroups={"article"})
     * @Rest\Get("/articles")
     */
     public function getArticlesAction(Request $request)
@@ -27,7 +27,7 @@ class ArticleController extends Controller
     }
 
     /**
-    * @Rest\View()
+    * @Rest\View(serializerGroups={"article"})
     * @Rest\Get("/articles/{id}")
     */
     public function getArticleAction(Request $request)
@@ -37,24 +37,24 @@ class ArticleController extends Controller
                         ->find($request->get('id'));
 
         if (empty($article)) {
-            return new JsonResponse(['message' => 'Article not found'], Response::HTTP_NOT_FOUND);
+            return View::create(['message' => 'Article not found'], Response::HTTP_NOT_FOUND);
         }
 
         return $article;
     }
 
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"article"})
      * @Rest\Patch("/articles/{id}")
      */
-    public function patchPlaceAction(Request $request)
+    public function patchArticleAction(Request $request)
     {
         $article = $this->get('doctrine.orm.entity_manager')
                         ->getRepository('NotSoFarAwayApiBundle:Article')
                         ->find($request->get('id'));
 
         if (empty($article)) {
-            return new JsonResponse(['message' => 'Article not found'], Response::HTTP_NOT_FOUND);
+            return View::create(['message' => 'Article not found'], Response::HTTP_NOT_FOUND);
         }
 
         $form = $this->createForm(ArticleType::class, $article);
