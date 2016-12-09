@@ -1,0 +1,21 @@
+NotSoFarAway\ApiBundle\Entity\Article:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['article']
+        title:
+            groups: ['article']
+        country:
+            groups: ['article']
+        author:
+            groups: ['article']
+        publish_time:
+            groups: ['article']
+        content:
+            groups: ['article']
+        link:
+            groups: ['article']
+        image_src:
+            groups: ['article']
+        divergents:
+            groups: ['article']

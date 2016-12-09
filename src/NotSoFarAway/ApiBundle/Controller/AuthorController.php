@@ -9,10 +9,15 @@ use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\ViewHandler;
 use FOS\RestBundle\View\View;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class AuthorController extends Controller
 {
     /**
+    * @ApiDoc(
+    *    description="Get all authors",
+    *    output= { "class"=Author::class, "collection"=true, "groups"={"author"} }
+    * )
     * @Rest\View(serializerGroups={"author"})
     * @Rest\Get("/authors")
     */
@@ -26,6 +31,10 @@ class AuthorController extends Controller
     }
 
     /**
+    * @ApiDoc(
+    *    description="Get author detail",
+    *    output= { "class"=Author::class, "groups"={"author"} }
+    * )
     * @Rest\View(serializerGroups={"author"})
     * @Rest\Get("/authors/{id}")
     */

@@ -1,0 +1,11 @@
+NotSoFarAway\ApiBundle\Entity\Author:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['article','author']
+        name:
+            groups: ['article','author']
+        website:
+            groups: ['article','author']
+        logo_src:
+            groups: ['article','author']

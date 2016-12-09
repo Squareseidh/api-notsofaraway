@@ -1,0 +1,9 @@
+NotSoFarAway\ApiBundle\Entity\Country:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['article','country']
+        name:
+            groups: ['article','country']
+        flag_src:
+            groups: ['article','country']

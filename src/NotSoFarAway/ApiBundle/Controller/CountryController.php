@@ -9,10 +9,16 @@ use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\ViewHandler;
 use FOS\RestBundle\View\View;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class CountryController extends Controller
 {
     /**
+    * @ApiDoc(
+    *    description="Get all countries",
+    *    output= { "class"=Country::class, "collection"=true, "groups"={"country"} }
+    * )
+    *
     * @Rest\View(serializerGroups={"country"})
     * @Rest\Get("/countries")
     */
@@ -26,6 +32,11 @@ class CountryController extends Controller
     }
 
     /**
+    * @ApiDoc(
+    *    description="Get country detail",
+    *    output= { "class"=Country::class, "groups"={"country"} }
+    * )
+    *
     * @Rest\View(serializerGroups={"country"})
     * @Rest\Get("/countries/{id}")
     */

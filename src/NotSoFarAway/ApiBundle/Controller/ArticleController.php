@@ -10,10 +10,15 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\ViewHandler;
 use FOS\RestBundle\View\View;
 use NotSoFarAway\ApiBundle\Form\Type\ArticleType;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class ArticleController extends Controller
 {
     /**
+    * @ApiDoc(
+    *    description="Get all articles",
+    *    output= { "class"=Article::class, "collection"=true, "groups"={"article"} }
+    * )
     * @Rest\View(serializerGroups={"article"})
     * @Rest\Get("/articles")
     */
@@ -27,6 +32,10 @@ class ArticleController extends Controller
     }
 
     /**
+    * @ApiDoc(
+    *    description="Get article detail",
+    *    output= { "class"=Article::class, "groups"={"article"} }
+    * )
     * @Rest\View(serializerGroups={"article"})
     * @Rest\Get("/articles/{id}")
     */
@@ -44,6 +53,10 @@ class ArticleController extends Controller
     }
 
     /**
+     * @ApiDoc(
+     *    description="Like article",
+     *    output= { "class"=Article::class, "groups"={"article"} }
+     * )
      * @Rest\View(serializerGroups={"article"})
      * @Rest\Patch("/articles/{id}")
      */

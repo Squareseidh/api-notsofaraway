@@ -1,11 +1,15 @@
+nelmio-api-doc:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /documentation
+
 articles:
-  type: rest
-  resource:  NotSoFarAway\ApiBundle\Controller\ArticleController
+    type: rest
+    resource:  NotSoFarAway\ApiBundle\Controller\ArticleController
 
 authors:
-  type: rest
-  resource:  NotSoFarAway\ApiBundle\Controller\AuthorController
+    type: rest
+    resource:  NotSoFarAway\ApiBundle\Controller\AuthorController
 
 countries:
-  type: rest
-  resource:  NotSoFarAway\ApiBundle\Controller\CountryController
+    type: rest
+    resource:  NotSoFarAway\ApiBundle\Controller\CountryController
